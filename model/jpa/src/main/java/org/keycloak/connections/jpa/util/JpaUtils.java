@@ -233,6 +233,8 @@ public class JpaUtils {
                 return "mssql";
             case "EnterpriseDB":
                 return "postgresql";
+            case "KingbaseES":
+                return "kingbasees";
             default:
                 return productName.toLowerCase();
         }

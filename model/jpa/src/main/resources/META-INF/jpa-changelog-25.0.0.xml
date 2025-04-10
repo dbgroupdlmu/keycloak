@@ -149,6 +149,7 @@
             <or>
                 <dbms type="mysql"/>
                 <dbms type="mariadb"/>
+                <dbms type="kingbasees"/>
             </or>
         </preConditions>
         <customChange class="org.keycloak.connections.jpa.updater.liquibase.custom.JpaUpdate25_0_0_MySQL_ConsentConstraints"/>
