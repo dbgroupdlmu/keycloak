@@ -59,6 +59,7 @@
                     <dbms type="mariadb"/>
                     <dbms type="postgresql"/>
                     <dbms type="oracle"/>
+                    <dbms type="kingbasees"/>
                 </or>
             </and>
         </preConditions>

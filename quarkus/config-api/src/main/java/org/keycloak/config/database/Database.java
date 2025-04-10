@@ -181,6 +181,14 @@ public final class Database {
                 asList("liquibase.database.core.PostgresDatabase", "org.keycloak.connections.jpa.updater.liquibase.PostgresPlusDatabase"),
                 "postgres"
         ),
+        KINGBASEES("kingbasees",
+                "com.kingbase8.xa.KBXADataSource",
+                "com.kingbase8.Driver",
+                "org.hibernate.dialect.Kingbase8Dialect",
+                "jdbc:kingbase8://${kc.db-url-host:localhost}:${kc.db-url-port:54321}/${kc.db-url-database:keycloak}${kc.db-url-properties:}",
+                asList("liquibase.database.core.KingBase8Database "),
+                "kingbasees"
+        ),
         MSSQL("mssql",
                 "com.microsoft.sqlserver.jdbc.SQLServerXADataSource",
                 "com.microsoft.sqlserver.jdbc.SQLServerDriver",

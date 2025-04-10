@@ -59,6 +59,7 @@
             <and>
                 <not>
                     <dbms type="oracle" />
+                    <dbms type="kingbasees"/>
                 </not>
                 <not>
                     <changeSetExecuted id="8.0.0-updating-credential-data-not-oracle" author="keycloak" changeLogFile="META-INF/jpa-changelog-8.0.0.xml"/>
@@ -122,7 +123,10 @@
         <validCheckSum>7:5abfde4c259119d143bd2fbf49ac2bca</validCheckSum>
         <preConditions onSqlOutput="TEST" onFail="MARK_RAN">
             <and>
-                <dbms type="oracle" />
+                <or>
+                    <dbms type="oracle"/>
+                    <dbms type="kingbasees"/>
+                </or>
                 <not>
                     <changeSetExecuted id="8.0.0-updating-credential-data-not-oracle" author="keycloak" changeLogFile="META-INF/jpa-changelog-8.0.0.xml"/>
                 </not>

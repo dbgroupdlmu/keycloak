@@ -24,7 +24,10 @@
     <changeSet author="keycloak" id="24.0.2-27967-drop-index-if-present">
         <preConditions onSqlOutput="TEST" onFail="MARK_RAN">
             <and>
-                <dbms type="oracle"/>
+                <or>
+                    <dbms type="oracle"/>
+                    <dbms type="kingbasees"/>
+                </or>
                 <indexExists tableName="CLIENT_ATTRIBUTES" indexName="IDX_CLIENT_ATT_BY_NAME_VALUE" />
             </and>
         </preConditions>
@@ -33,7 +36,10 @@
 
     <changeSet author="keycloak" id="24.0.2-27967-reindex">
         <preConditions onSqlOutput="TEST" onFail="MARK_RAN">
-            <dbms type="oracle"/>
+            <or>
+                <dbms type="oracle"/>
+                <dbms type="kingbasees"/>
+            </or>
         </preConditions>
         <createIndex tableName="CLIENT_ATTRIBUTES" indexName="IDX_CLIENT_ATT_BY_NAME_VALUE">
             <column name="NAME" type="VARCHAR(255)"/>

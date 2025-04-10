@@ -83,6 +83,10 @@ public class IgnoredArtifacts {
             "io.quarkus:quarkus-jdbc-postgresql-deployment",
             "org.postgresql:postgresql"
     );
+    public static final Set<String> JDBC_KINGBASEES = Set.of(
+
+            "cn.com.kingbase:kingbase8"
+    );
 
     public static final Set<String> JDBC_MARIADB = Set.of(
             "io.quarkus:quarkus-jdbc-mariadb",
@@ -143,6 +147,7 @@ public class IgnoredArtifacts {
                     case POSTGRES -> JDBC_POSTGRES;
                     case MSSQL -> JDBC_MSSQL;
                     case ORACLE -> JDBC_ORACLE;
+                    case KINGBASEES -> JDBC_KINGBASEES;
                 })
                 .flatMap(Collection::stream)
                 .collect(Collectors.toSet());

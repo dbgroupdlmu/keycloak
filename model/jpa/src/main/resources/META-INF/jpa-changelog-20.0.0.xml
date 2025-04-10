@@ -24,6 +24,7 @@
                 <dbms type="mariadb"/>
                 <dbms type="postgresql"/>
                 <dbms type="oracle"/>
+                <dbms type="kingbasees" />
             </or>
         </preConditions>
         <createIndex tableName="GROUP_ATTRIBUTE" indexName="IDX_GROUP_ATT_BY_NAME_VALUE">
@@ -36,6 +37,9 @@
         <modifySql dbms="oracle">
             <replace replace="VALUE(255)" with="SUBSTR(VALUE, 1, 250)" />
         </modifySql>
+        <modifySql dbms="kingbasees">
+            <replace replace="VALUE(255)" with="SUBSTR(VALUE, 1, 250)" />
+        </modifySql>
     </changeSet>
 
     <changeSet author="keycloak" id="20.0.0-12964-unsupported-dbs">
@@ -46,6 +50,7 @@
                     <dbms type="mariadb"/>
                     <dbms type="postgresql"/>
                     <dbms type="oracle"/>
+                    <dbms type="kingbasees"/>
                 </or>
             </not>
         </preConditions>

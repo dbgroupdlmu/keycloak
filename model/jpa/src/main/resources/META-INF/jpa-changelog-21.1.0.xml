@@ -21,6 +21,7 @@
         <preConditions onFail="MARK_RAN" onSqlOutput="TEST">
             <not>
                 <dbms type="oracle"/>
+                <dbms type="kingbasees"/>
             </not>
         </preConditions>
 
@@ -32,7 +33,10 @@
 
     <changeSet author="keycloak" id="21.1.0-19404-2">
         <preConditions onFail="MARK_RAN" onSqlOutput="TEST">
-            <dbms type="oracle"/>
+            <or>
+                <dbms type="oracle"/>
+                <dbms type="kingbasees"/>
+            </or>
         </preConditions>
 
         <addColumn tableName="RESOURCE_SERVER_POLICY">

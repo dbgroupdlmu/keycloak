@@ -28,7 +28,10 @@
     <changeSet author="hmlnarik@redhat.com" id="2.5.0-unicode-oracle">
         <validCheckSum>7:e4c7e8f2256210aee71ddc42f538b57a</validCheckSum>
         <preConditions onSqlOutput="TEST" onFail="MARK_RAN">
-            <dbms type="oracle" />
+            <or>
+                <dbms type="oracle" />
+                <dbms type="kingbasees"/>
+            </or>
         </preConditions>
 
         <modifyDataType tableName="AUTHENTICATION_FLOW" columnName="DESCRIPTION" newDataType="NVARCHAR(255)"/>
@@ -68,6 +71,7 @@
         <preConditions onSqlOutput="TEST" onFail="MARK_RAN">
             <not>
                 <dbms type="oracle" />
+                <dbms type="kingbasees" />
             </not>
         </preConditions>
 

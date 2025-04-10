@@ -70,6 +70,7 @@
                 <dbms type="mariadb"/>
                 <dbms type="postgresql"/>
                 <dbms type="oracle"/>
+                <dbms type="kingbasees"/>
             </or>
         </preConditions>
         <createIndex tableName="CLIENT_ATTRIBUTES" indexName="IDX_CLIENT_ATT_BY_NAME_VALUE">
@@ -80,6 +81,9 @@
             <replace replace="VALUE(255)" with="(value::varchar(250))" />
         </modifySql>
         <modifySql dbms="oracle">
+            <replace replace="VALUE(255)" with="SUBSTR(VALUE, 1, 250)" />
+        </modifySql>
+        <modifySql dbms="kingbasees">
             <replace replace="VALUE(255)" with="SUBSTR(VALUE, 1, 250)" />
         </modifySql>
     </changeSet>
@@ -93,6 +97,7 @@
                     <dbms type="mariadb"/>
                     <dbms type="postgresql"/>
                     <dbms type="oracle"/>
+                    <dbms type="kingbasees"/>
                 </or>
             </not>
         </preConditions>
