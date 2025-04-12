@@ -55,7 +55,10 @@
         <validCheckSum>7:90a1e74f92e9cbaa0c5eab80b8a037f3</validCheckSum>
         <preConditions onFail="MARK_RAN" onSqlOutput="TEST">
             <!-- sql server needs drop and re-create constraints before modifying data type -->
-            <dbms type="mssql"/>
+            <or>
+                <dbms type="mssql"/>
+                <dbms type="kingbasees"/>
+            </or>
         </preConditions>
         <dropPrimaryKey tableName="CLIENT_SCOPE_CLIENT" constraintName="C_CLI_SCOPE_BIND"/>
         <dropIndex tableName="CLIENT_SCOPE_CLIENT" indexName="IDX_CLSCOPE_CL"/>
@@ -72,7 +75,10 @@
         <validCheckSum>7:64db59e44c374f13955489e8990d17a1</validCheckSum>
         <preConditions onFail="MARK_RAN" onSqlOutput="TEST">
             <!-- sql server needs drop and re-create constraints before modifying data type -->
-            <dbms type="mssql"/>
+            <or>
+                <dbms type="mssql"/>
+                <dbms type="kingbasees"/>
+            </or>
         </preConditions>
         <addNotNullConstraint tableName="CLIENT_SCOPE_CLIENT" columnName="CLIENT_ID" columnDataType="VARCHAR(255)"/>
         <addNotNullConstraint tableName="CLIENT_SCOPE_CLIENT" columnName="SCOPE_ID" columnDataType="VARCHAR(255)"/>

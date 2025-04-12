@@ -45,7 +45,10 @@
     <changeSet author="glavoie@gmail.com" id="authz-3.4.0.CR1-resource-server-pk-change-part3-fixed">
         <validCheckSum>7:fd8cf02498f8b1e72496a20afc75178c</validCheckSum>
         <preConditions onFail="MARK_RAN" onSqlOutput="TEST">
-            <dbms type="mssql" />
+            <or>
+                <dbms type="mssql"/>
+                <dbms type="kingbasees"/>
+            </or>
             <not>
                 <changeSetExecuted id="authz-3.4.0.CR1-resource-server-pk-change-part3" author="glavoie@gmail.com" changeLogFile="META-INF/jpa-changelog-authz-3.4.0.CR1.xml" />
             </not>

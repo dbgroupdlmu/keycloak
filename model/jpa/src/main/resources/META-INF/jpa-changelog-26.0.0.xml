@@ -94,6 +94,9 @@
         <modifySql dbms="mssql">
             <replace replace="DEFAULT 0" with="DEFAULT 0 WITH VALUES" />
         </modifySql>
+        <modifySql dbms="kingbasees">
+            <replace replace="DEFAULT 0" with="DEFAULT 0 WITH VALUES" />
+        </modifySql>
     </changeSet>
 
     <changeSet author="keycloak" id="26.0.0-32583-drop-redundant-index-on-client-session">
